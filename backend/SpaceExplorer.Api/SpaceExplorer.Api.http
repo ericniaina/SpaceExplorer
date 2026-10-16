@@ -1,0 +1,21 @@
+@host = http://localhost:5281
+
+GET {{host}}/api/me
+Accept: application/json
+
+###
+
+GET {{host}}/api/spaces
+Accept: application/json
+
+###
+
+GET {{host}}/api/spaces/A/compartments
+Accept: application/json
+
+###
+
+GET {{host}}/api/spaces/A/workspaces?includeJobs=true
+Accept: application/json
+
+###

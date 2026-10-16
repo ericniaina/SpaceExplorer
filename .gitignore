@@ -1,0 +1,11 @@
+# .NET
+bin/
+obj/
+*.user
+.vs/
+
+# Angular build output, generated into the API
+backend/SpaceExplorer.Api/wwwroot/
+
+# Node
+node_modules/

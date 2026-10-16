@@ -1,0 +1,36 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$primary: mat.define-palette(mat.$indigo-palette);
+$accent: mat.define-palette(mat.$blue-grey-palette);
+$theme: mat.define-light-theme((
+  color: (primary: $primary, accent: $accent),
+  typography: mat.define-typography-config(),
+  density: -1,
+));
+
+@include mat.all-component-themes($theme);
+
+:root {
+  --surface: #fcfcfb;
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --text-muted: #6f6e69;
+  --border: #e3e2de;
+  --warning-bg: #fff4e0;
+  --warning-text: #7a4a00;
+}
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: var(--surface);
+  color: var(--text-primary);
+}
+
+.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+// Material cells set their own alignment: numbers must win.
+.mat-mdc-table .num { text-align: right; }
+.muted { color: var(--text-muted); }
